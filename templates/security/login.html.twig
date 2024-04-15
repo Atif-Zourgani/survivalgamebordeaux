@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Survival Game Bordeaux : Connexion{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>Entrez dans le game!</h1>
+<div class="loginContainer">
+    <form method="post" class="">
+    <h2 class="">Connectez-vous</h2>
+        {% if error %}
+            <div class="formError">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+
+        <div>
+            <label for="inputEmail">ADRESSE E-MAIL</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="" autocomplete="email" placeholder="nom@exemple.com" required autofocus>
+        </div>
+        <div>
+             <label for="inputPassword">MOT DE PASSE</label>
+            <input type="password" name="password" id="inputPassword" class="" autocomplete="current-password" placeholder="Mot de passe" required>
+        </div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <div class="">
+            <label>
+            Se souvenir de moi
+                <input type="checkbox" name="_remember_me"> 
+            </label>
+        </div>
+        <button class="" type="submit">
+            Se connecter!
+        </button>
+    </form>
+    <div class="borderSolid"></div>
+    <div class="registrationContainer">
+        <span>PAS DE COMPTE ?</span>
+        <a href="{{ path('app_registration') }}">
+            <h2 class="button" >Inscrivez vous !</h2>
+        </a>
+    </div>
+</div>
+
+
+{% endblock %}

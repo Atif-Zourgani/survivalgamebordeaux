@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserSessionController!{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/session.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>INSRIVEZ-VOUS</h1>
+    <ul class="sessionCardContainer">
+        {% for session in sessions %}
+            <li class="boxShadow">
+                <img src="https://api.dicebear.com/8.x/rings/svg?seed={{ session.name }}" alt="Logo de la {{ session.name }}" class="">
+                <h2>{{session.name}}</h2>
+                <p>Début : {{session.date|date('d m Y') }}</p>
+                <p>Place : {{session.seatCount}}</p>
+                <p>Participant : 5</p>
+                <a href="{{ path('app_user_session_registration', {'idSession': session.id}) }}" class="button">Je participe</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

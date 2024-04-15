@@ -1,0 +1,21 @@
+.profilsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profilsContainer img {
+    width: 8vw;
+    
+}
+
+.profilsContainer li {
+    font-size: 0.70em;
+    cursor: pointer;
+    margin: 2%;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    text-align: center;
+}

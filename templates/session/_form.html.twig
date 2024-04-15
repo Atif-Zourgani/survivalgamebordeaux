@@ -1,0 +1,25 @@
+
+{{ form_start(form) }}
+    <div>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+        <div class="formError">
+            {{ form_errors(form.name) }}
+        </div>    
+    </div>  
+    <div>
+        {{ form_label(form.date) }}
+        {{ form_widget(form.date) }}
+        <div class="formError">
+            {{ form_errors(form.date) }}
+        </div>
+    </div>  
+    <div>
+        {{ form_label(form.seatCount) }}
+        {{ form_widget(form.seatCount) }}
+        <div class="formError">
+            {{ form_errors(form.seatCount) }}
+        </div>
+    </div>    
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ongoingSession{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/profiles.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/pages/session.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="posRelative">
+        <h1>PARTIE EN COURS</h1>
+        <div>
+            <h2>Les joueurs qualifiés</h2>
+            <ul class="profilsContainer">
+                {% for user in usersOngoingSession %}
+                    <li class="boxShadow">
+                        <img src="https://api.dicebear.com/8.x/bottts/svg?seed={{ user.avatarUrl }}" alt="Avatar de {{ user.username }}" class="">
+                        <p>{{ user.username }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <button id="quiteBtn" class="button quiteGame posAbsolute">ABANDONNER LACHEMENT</button>
+        <div id="quiteContainer" class="displayNone">
+            <button class="closeBtn closeWindow">X</button>
+            <span>Cette action sera définitive</span>
+            <div>
+                <form action="{{ path('app_quite_session') }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('generate_avatar_token') }}">
+                    <button type="submit" class="button">Abandonner la partie!</button>
+                </form>
+                <button class="button closeWindow">Ne pas abandonner</button>
+            </div>
+        </div>
+    </div>
+    {% block javascripts %}
+        <script src="{{ asset('js/quiteSession.js') }}"></script>
+    {% endblock %}
+{% endblock %}
