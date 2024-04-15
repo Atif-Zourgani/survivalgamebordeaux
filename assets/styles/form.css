@@ -1,0 +1,65 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+form > div,
+#registration_form > div {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 6px;
+}
+
+.formError{
+    color: var(--error-color);
+    font-size: 0.70em;
+}
+
+label {
+    font-weight: normal;
+    font-size: 0.70em;
+    letter-spacing: 0.12em;
+    margin: 4px 0;
+}
+
+input {
+    border: none;
+    background: rgb(248, 248, 248);
+    outline: none;
+    box-shadow: none;
+    padding: 4px;
+    border-bottom: 2px solid var(--grey-color);
+    width: 30vw;
+    margin: 0 10px;
+    transition: 0.4s;
+}
+
+input[type="checkbox"] {
+    width: min-content;
+}
+
+input:focus {
+    border-bottom: 2px solid var(--secondary-color); 
+}
+
+form button,
+.button {
+    font-size: 1em;
+    letter-spacing: 0.10em;
+    background-color: #d5d5d5;
+    width: 30vw;
+    padding: 8px 4px;
+    margin: 4px 10px;
+    border: none;
+    transition: 0.4s;
+    text-align: center;
+    cursor: pointer;
+}
+
+form button:hover,
+.button:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game index{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>LES JEUX</h1>
+
+    <table class="table table showGamesContainer">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games %}
+            <tr>
+                <td>{{ game.name }}</td>
+                <td>{{ game.description }}</td>
+                <td>
+                    <a href="{{ path('app_game_edit', {'id': game.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="addGameContainer">
+        <h2>Ajouter un jeu</h2>
+
+        {{ include('game/_form.html.twig') }}
+    </div>
+
+{% endblock %}

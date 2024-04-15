@@ -1,0 +1,168 @@
+/*------------------general------------------*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'openSansRegular', sans-serif;
+}
+
+main {
+    padding: 0 20px;
+}
+
+:root {
+    --primary-color: #242424;
+    --secondary-color: #ba0260;
+    --background-color: #ffffff;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --grey-color: #b8b8b8;
+}
+
+@font-face {
+    font-family: 'openSansMedium';
+    src: url('/fonts/OpenSans/static/OpenSans-Medium') format('medium');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'openSansRegular';
+    src: url('/fonts/OpenSans/static/OpenSans-Regular') format('regular');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'openSansBold';
+    src: url('/fonts/OpenSans/static/OpenSans-Bold') format('bold');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2 {
+    font-family: 'openSansMedium', sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.10em;
+    font-weight: normal;
+    padding: 20px 6px;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: 0.5s;
+}
+
+li {
+    list-style-type: none;
+}
+
+span {
+    letter-spacing: 0.12em;
+    font-size: 0.75em;
+    margin: 0 auto;
+}
+.boxShadow {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.closeBtn {
+    width: 30px!important;
+    height: 30px;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    transform: translate(-50%,-50%);
+}
+/* ------------------header------------------*/
+.headerContainer > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerContainer li {
+    margin: 0 26px;
+    padding: 6px 0;
+    letter-spacing: 0.10em;
+    font-size: 1vw;
+    font-family: 'openSansBold', sans-serif;
+    width: 10vw;
+    text-align: center;
+    border-bottom: solid var(--primary-color) 3px;
+}
+
+.linkActive {
+    border-bottom: var(--secondary-color) solid 3px!important;
+}
+
+.headerContainer a:hover {
+    color: var(--secondary-color)!important;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+}
+
+.logoHeader {
+    width: 12vw!important;
+    border: none!important;
+}
+
+.logoHeader > img {
+    width: 100%;
+}
+
+.posFixed {
+    position: fixed
+}
+
+.posAbsolute {
+    position: absolute;
+}
+
+.posRelative {
+    position: relative;
+}
+
+.displayNone{
+    display: none!important;
+}
+
+.displayBlock {
+    display: block;
+}
+
+.linkAdmin {
+    top: 10px;
+    left: 10px;
+}
+
+/*---------------------footer-------------------*/
+
+footer {
+    background-color: var(--grey-color);
+    padding: 20px;
+    margin-top: 100px;
+}
+.footerNavContainer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footerNavContainer a {
+    color: var(--primary-color);
+}
+.footerLogo {
+    width: 10vw;
+}
+.footerLogo img {
+    width: 100%;
+}
+

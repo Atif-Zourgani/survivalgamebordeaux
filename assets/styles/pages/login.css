@@ -1,0 +1,19 @@
+
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borderSolid {
+    height: 130px;
+    width: 2px;
+    background-color: var(--primary-color);
+    margin: 0 2vw;
+}
+
+.registrationContainer {
+    padding: 12px 6px;;
+}
+

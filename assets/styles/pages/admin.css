@@ -1,0 +1,64 @@
+.adminLinkContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+    ;
+    flex-wrap: wrap;
+    padding: 0 20%;
+}
+
+.adminLinkContainer > li {
+    margin: 20px 4vw;
+}
+
+/* -----------------Session ADmin ---------------
+ */
+
+.showSessionsContainer,
+.showGamesContainer {
+    width: 80vw!important;
+    margin: 0 auto;
+}
+
+.showSessionsContainer th,
+.showGamesContainer th {
+    padding: 4px;
+    font-size: 0.85em;
+    letter-spacing: 0.12em;
+    color: var(--secondary-color);
+    background-color: var(--grey-color);
+}
+
+.showSessionsContainer td,
+.showGamesContainer td {
+    letter-spacing: 0.12em;
+    font-size: 0.80em;
+    padding: 4px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.addSessionContainer,
+.addGameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.updateBtnContainer {
+    padding: 6vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formEditContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.datePast {
+    background-color: rgba(255, 0, 0, 0.276);
+}

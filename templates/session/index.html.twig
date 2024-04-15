@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session index{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/admin.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    {% set today = date('now') %}
+    <h1>Gestion sessions</h1>
+
+    <table class="table showSessionsContainer">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Places Max</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+            <tr class="{{ session.date < today ? 'datePast' : '' }}">
+                <td>{{ session.name }}</td>
+                <td>{{ session.date ? session.date|date('Y-m-d') : '' }}</td>
+                <td>{{ session.seatCount }}</td>
+                <td>
+                    <a class="" href="{{ path('app_session_edit', {'id': session.id}) }}">MODIFIER</a>
+                </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="addSessionContainer">
+        <h2>Ajouter une session</h2>
+        {{ include('session/_form.html.twig') }}
+    </div>
+{% endblock %}

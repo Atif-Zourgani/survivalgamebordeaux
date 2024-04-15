@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/profile.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Votre profil</h1>
+    <div class="profileContainer posRelative">
+        <div class="boxProfile boxShadow">
+            <h2> {{ user.username }}</h2>  
+            <div>
+                <img id="imgAvatar" src="https://api.dicebear.com/8.x/bottts/svg?seed={{ user.avatarUrl }}" alt="Avatar de {{ user.username }}" class="avatarProfile">
+            </div>
+        </div>
+        <div class="statsContainer">
+            <div class="boxProfile boxShadow">
+                <h2>Statistiques</h2>
+                <ul>
+                    <li>Top 1 : 0</li>
+                    <li>Top 10 : 0</li>
+                    <li>Top 20 : 0</li>
+                    <li>Partie joué : 0</li>
+                    <li>Jeux joué : 0</li>
+                    <li>%partie/elimination : 0%</li>
+                    <li>Joueurs éliminés : 0</li>
+                </ul>
+            </div>
+            <div class="boxProfile">
+                <button id="generateAvatarModal" class="button">Générer avatar</button>
+                <a class="button">je sais plus</a>
+                <a class="button">Modifier Profil</a>
+            </div>
+        </div>
+
+        {# modal generate avatar #}
+        <div id="generateAvatarContainer" class="displayNone posAbsolute generateAvatarContainer">
+            <div class="posRelative">
+                <button id="closeBtnAvatar" class="posAbsolute closeBtn">X</button>
+                <img id='imgGenerateAvatar' src="https://api.dicebear.com/8.x/bottts/svg?seed={{ user.avatarUrl }}" alt="Avatar de {{ user.username }}" class="avatarProfile">
+            </div>
+            <div class="avatarBtnContainer">
+                <button id="btnGenerate" class="button">Générer</button>
+                <button id="btnValidate" class="button">Conserver</button>
+            </div>
+        </div>
+        
+    </div>
+    {% block javascripts %}
+        <script>
+            var generateAvatarUrl = '{{ path('app_generate_avatar') }}';
+            const csrfToken = '{{ csrf_token('generate_avatar_token') }}'; // Utilisez un identifiant unique pour le token
+        </script>
+        <script src="{{ asset('js/generateAvatar.js') }}"></script>
+    {% endblock %}
+{% endblock %}

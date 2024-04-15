@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Session{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Modifier Session {{session.name}}</h1>
+
+    <div class="formEditContainer">
+        {{ include('session/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+
+    <div class="updateBtnContainer">
+        <a class="button" href="{{ path('app_session_index') }}">back to list</a>
+
+        {{ include('session/_delete_form.html.twig') }}
+    </div>
+{% endblock %}
